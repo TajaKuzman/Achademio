@@ -1,11 +1,13 @@
-# Achademio - an AI-based assistant for writing research papers
+# Achademio - an AI-based assistant for improving your research papers
 
 ![](figures/main-example.png)
 
 An AI assistant, based on the GPT-3.5 model by OpenAI, that will improve your efficienty in writing research papers. It can:
 - rewrite your text in academic style (default option, click `CTRL+Enter` to run it)
-- write a paragraph in academic style from your bullet point list (runs automatically, once you select this option from the drop-down menu)
-- proofread your text and higlight the errors (runs automatically, once you select this option from the drop-down menu)
+- write a paragraph in academic style from your bullet point list (runs automatically once you select this option from the drop-down menu)
+- proofread your text and highlight the errors (runs automatically once you select this option from the drop-down menu)
+
+The model has a limitation of how many words it can process at once. Therefore, it is advisable to input shorter text sequences at a time to optimize its performance.
 
 Let me know if you would like to have any other functionalities!
 
@@ -19,13 +21,13 @@ Write academic text from a bullet point list:
 
 ![](figures/bullet-point-example.png)
 
-Check your text for any errors:
+Check your text for errors:
 ![](figures/correct-text-example.png)
 
 ## Use
 
 1. Clone this repository.
 2. Install streamlit: `pip install streamlit install pip-run --user` and streamlit-chat: `pip install streamlit_chat`
-3. Create an OpenAI account to get a API key (see https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0). Save the API key in line 5 of `achademio.py` or in a separate file (make sure that you do not share it with anyone). The model is based on the GPT-3.5 model which will cost you $0.0015/1K tokens for input and $0.002/1K tokens. You can track your expenses in the `Manage account` menu item under `Personal` at https://platform.openai.com/. New users get $18 for free, so the service won't cost you anything at the start.
+3. Create an OpenAI account to get a API key (see https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0). Save the API key in line 5 of `achademio.py` or in a separate file, named `API_key` (make sure that you do not share it with anyone). The model is based on the GPT-3.5 model which will cost you $0.0015/1K tokens for input and $0.002/1K tokens. You can track your expenses in the `Manage account` menu item under `Personal` at https://platform.openai.com/. New users get $18 for free, so the service won't cost you anything at the start.
 4. Run the streamlit python script in your command line with the following command: `python -m streamlit run achademio.py`
 5. A website will open in your browser where you can use the chatbot to improve your academic texts.

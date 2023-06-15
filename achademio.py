@@ -4,25 +4,9 @@ import openai
 
 openai.api_key = open("API_key", "r").read()
 
-# Now define the bot's knowledge:
-#genre_survey = open("data/genre_survey.txt", "r").read()
-
-#bot_knowledge = "You are especially knowledgeable on automatic genre identification. Here's what you know about it: {genre_survey[:1000]}"
-
-#if 'context' not in st.session_state:
-#    st.session_state.context = [ {'role':'system', 'content':"{}".format(bot_role)} ]
-
-if 'button_option' not in st.session_state:
-    st.session_state.button_option = ["rewrite"]
-
-
-# In the on_click event of the button, transfer the query from text input into agent.run() function to start the chain execution. After the chain is finished, append the response and original prompt into two lists of st.session_state for display on the web by streamlit_chat component as chat history
 def send_click():
     if st.session_state.user != '':
         prompt = st.session_state.user
-
-        # Append the prompt to the context
-        #curr_context.append({'role':'user', 'content':"Rewrite the following: {}".format(prompt)})
 
         # Define the bot role:
         bot_role = "You are AChatdemio, a bot that helps young researchers to write better research papers. You respond in a concise and academic style. Write short sentences, so that they are clear."
@@ -44,9 +28,6 @@ def send_click():
 
         st.write(response)
 
-        # Add the response to the context
-        #st.session_state.context.append({'role':'assistant', 'content': '{}'.format(response)})
-        #return context
 
 def academic():
     if st.session_state.user != '':
@@ -134,15 +115,3 @@ elif 'Write a paragraph from my bullet point list' in option:
     bullet()
 else:
     proofreading()
-
-
-# Call message() function to display chat bubbles, if is_user=True, then the bubble will be on the right side, otherwise the left side. seed is used to show different styles of avatars.
-
-# Print out all the context up so far:
-#st.write(st.session_state.context)
-
-#if st.session_state.prompts:
-#        for i in range(len(st.session_state.responses)-1, -1, -1):
-#            message(st.session_state.prompts[i], is_user=True, key=str(i) + '_user', seed=83)
-#            message(st.session_state.responses[i], key=str(i), seed='Milo')
-#            st.write(st.session_state.responses[i])
