@@ -3,9 +3,9 @@
 ![](figures/main-example.png)
 
 An AI assistant, based on the GPT-3.5 model by OpenAI, that will improve your efficienty in writing research papers. It can:
-- rewrite your text in academic style
-- write a paragraph in academic style from your bullet point list
-- proofread your text and higlight the errors
+- rewrite your text in academic style (default option, click `CTRL+Enter` to run it)
+- write a paragraph in academic style from your bullet point list (runs automatically, once you select this option from the drop-down menu)
+- proofread your text and higlight the errors (runs automatically, once you select this option from the drop-down menu)
 
 Let me know if you would like to have any other functionalities!
 
