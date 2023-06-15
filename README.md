@@ -2,12 +2,12 @@
 
 ![](figures/main-example.png)
 
-AI assistant, based on the GPT-3.5 model by OpenAI, is designed to enhance your proficiency in writing research papers. Whether you seek to adapt your content to academic standards, transform bullet points into eloquent text, or enhance the quality of your writing through error detection, this program stands ready to support and elevate your scholarly pursuits.
+AI assistant, based on the GPT-3.5 model by OpenAI, is designed to enhance your proficiency in writing research papers. It allows you to adapt your content to academic standards, transform bullet points into eloquent text, or enhance the quality of your writing through error detection.
 
-The web interface offers a range of functionalities, empowering users to accomplish the following:
-- **Academic Style Rewriting**: users can conveniently invoke the assistant to improve the style of their text by rewriting it in an academic style. Simply execute the program by pressing CTRL+Enter.
-- **Academic Paragraph Generation**: By selecting this option from the drop-down menu, users can effortlessly convert their bullet point lists into cohesive academic paragraphs. This automated process seamlessly structures ideas, freeing users from the meticulous task of manual composition.
-- **Proofreading**: By selecting this option from the drop-down menu, the program will identify and highlight potential errors, enabling users to rectify and refine their work.
+The web interface offers a range of functionalities, empowering you to accomplish the following:
+- **Academic Style Rewriting**: you can conveniently invoke the assistant to improve the style of your text by rewriting it in an academic style. Simply execute the program by pressing CTRL+Enter.
+- **Academic Paragraph Generation**: By selecting this option from the drop-down menu, you can effortlessly convert your bullet point lists into cohesive academic paragraphs. 
+- **Proofreading**: By selecting this option from the drop-down menu, you invoke the AI assistant to identify and highlight potential errors, enabling you to rectify and refine their work.
 
 The model has a limitation of how many words it can process at once. Therefore, it is advisable to input shorter text sequences at a time to optimize its performance.
 
