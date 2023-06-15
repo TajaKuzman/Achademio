@@ -25,7 +25,7 @@ def send_click():
         #curr_context.append({'role':'user', 'content':"Rewrite the following: {}".format(prompt)})
 
         # Define the bot role:
-        bot_role = "You are AChatdemio, a bot that helps young researchers to write better research papers. You respond in a clear, concise and academic style."
+        bot_role = "You are AChatdemio, a bot that helps young researchers to write better research papers. You respond in a concise and academic style. Write short sentences, so that they are clear."
 
         # Define the ChatGPT model
         output = openai.ChatCompletion.create(
@@ -121,7 +121,7 @@ def proofreading():
         st.write(response)
 
 st.title(":blue[Achademio] ☕")
-st.write("# Improve the style of your papers with AI")
+st.write("# Improve the style of your research papers with AI")
 
 
 # Create another two Streamlit widgets st.text_input() and st.button() to facilitate the query interface to users. 
