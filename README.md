@@ -39,3 +39,9 @@ Let me know via an Issue if you would like to have any other functionalities!
 ## Costs
 
 New users of the OpenAPI key are granted a complimentary $18 credit, so the initial utilization of the model comes at no expense to you. After this amount is spent, the usage of the program is based on the cost of GPT-3.5 model, which is $0.0015/1K tokens for input and $0.002/1K tokens for model's output. You can track your expenses in the `Manage account` menu item under `Personal` at https://platform.openai.com/. The costs are very affordable: if you would input to the AI assistant 1,000 words (approximately 2 pages), the total expense would amount to less than $4.
+
+## Please note
+
+Please note that the results are based on a generative language model and require careful consideration before being used -- make sure to read all outputs carefully and use common sense when making use of them. If your initial text is hard to understand or contains many errors, the model might interpret the text incorrectly, so always check whether your statement still holds. It could also happen that the generated text would omit negation and by that change the meaning of the sentence, so make sure to check the output before using it.
+
+The assistant should be used for improving the style of the text that you have written by yourself and verified facts based on trusted sources, and not for generating new statements (please consider that big blocks of generated text might come from a published work and using them without citing the work would be plagiarism).
