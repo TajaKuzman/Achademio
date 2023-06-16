@@ -31,7 +31,7 @@ Let me know via an Issue if you would like to have any other functionalities!
 ## Use
 
 1. Clone this repository.
-2. Install streamlit: `pip install streamlit install pip-run --user` and streamlit-chat: `pip install streamlit_chat`
+2. Install streamlit: `pip install streamlit install pip-run --user`, and openai: `pip install openai`
 3. Create an OpenAI account to get a API key (see https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0). Save the API key in line 5 of `achademio.py` or in a separate file, named `API_key` (make sure that you do not share it with anyone).
 4. Run the streamlit python script in the command line with the following command: `python -m streamlit run achademio.py`
 5. A website will open in your browser where you can use the Achademio bot to improve your academic texts.

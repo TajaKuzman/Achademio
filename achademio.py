@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_chat import message
 import openai
 
 openai.api_key = open("API_key", "r").read()
