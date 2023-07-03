@@ -1,7 +1,9 @@
 import streamlit as st
 import openai
+from redlines import Redlines
 
 openai.api_key = open("API_key", "r").read()
+
 
 def send_click():
     if st.session_state.user != '':
@@ -50,6 +52,11 @@ def academic():
 
         response = output['choices'][0].message.content
 
+        st.subheader("Text with corrections")
+        diff = Redlines(prompt,response)
+        st.markdown(diff.output_markdown, unsafe_allow_html=True)
+
+        st.subheader("Rewritten text")
         st.write(response)
 
 def bullet():
