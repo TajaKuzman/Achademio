@@ -19,7 +19,7 @@ Let me know via an Issue if you would like to have any other functionalities!
 
 The rewritten text now includes information on what has changed for easier implementation of changes:
 
-![](figures\update-rewriting.png)
+![](figures/update-rewriting.png)
 
 
 ## Examples
