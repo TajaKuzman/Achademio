@@ -83,6 +83,31 @@ def bullet():
 
         st.write(response)
 
+def slides():
+    if st.session_state.user != '':
+        prompt = st.session_state.user
+
+        # Define the bot role:
+        bot_role = "You are AChatdemio, a bot that helps young researchers to write better research papers. You respond in a clear, concise and academic style."
+
+        # Define the ChatGPT model
+        output = openai.ChatCompletion.create(
+            # Define the model
+            model="gpt-3.5-turbo",
+            # Define the prompt - add the context
+            messages = [
+                {'role':'system', 'content':"{}".format(bot_role)},
+                {'role':'user', 'content':"Prepare text for powerpoint slides in form of bullet points from the following text, delimited by triple backticks. The bullet points should summarize the provided texts in a few sentences. The sentences should be short and summarization of the provided text. Avoid using full sentences when possible. End each sentence with a dot. The text: ```{}```".format(prompt)}
+            ],
+            # Set the temperature to 0 to get the most stable results
+            temperature = 0,
+        )
+
+        response = output['choices'][0].message.content
+
+        st.write(response)
+
+
 def proofreading():
     if st.session_state.user != '':
         prompt = st.session_state.user
@@ -113,11 +138,13 @@ st.write("# Improve the style of your research papers with AI")
 
 # Create another two Streamlit widgets st.text_input() and st.button() to facilitate the query interface to users. 
 st.text_area("Provide your text:", key="user")
-option = st.selectbox("Select what would you like the Achademio bot to do:", ('Rewrite in academic style', 'Write a paragraph from my bullet point list', 'Proofread my text and output errors'))
+option = st.selectbox("Select what would you like the Achademio bot to do:", ('Rewrite in academic style', 'Write a paragraph from my bullet point list', 'Summarize text in bullet points for slides', 'Proofread my text and output errors'))
 
 if 'Rewrite in academic style' in option:
     academic()
 elif 'Write a paragraph from my bullet point list' in option:
     bullet()
+elif 'Summarize text in bullet points for slides' in option:
+    slides()
 else:
     proofreading()
