@@ -2,7 +2,8 @@ import streamlit as st
 import openai
 from redlines import Redlines
 
-openai.api_key = open("API_key", "r").read()
+#openai.api_key = open("API_key", "r").read()
+openai.api_key = st.secrets["API_KEY"]
 
 
 def send_click():
