@@ -4,6 +4,8 @@
 
 AI assistant, based on the GPT-3.5 model by OpenAI, is designed to enhance your proficiency in writing research papers. It allows you to adapt your content to academic standards, transform bullet points into eloquent text, or enhance the quality of your writing through error detection.
 
+Clone the repository and run it with python and streamlit module, or deploy it for your personal use to [Streamlit Community Cloud](https://streamlit.io/cloud). 
+
 The web interface offers a range of functionalities, empowering you to accomplish the following:
 - **Academic Style Rewriting**: you can conveniently invoke the assistant to improve the style of your text by rewriting it in an academic style. Simply execute the program by pressing CTRL+Enter.
 - **Academic Paragraph Generation**: By selecting this option from the drop-down menu, you can effortlessly convert your bullet point lists into cohesive academic paragraphs. 
@@ -15,7 +17,7 @@ This program requires an OpenAPI key and some basic programming skills (to insta
 
 Let me know via an Issue if you would like to have any other functionalities!
 
-## Update (July 3rd 2023)
+## Update
 
 The rewritten text now includes information on what has changed for easier implementation of changes:
 
@@ -39,9 +41,9 @@ The rewritten text now includes information on what has changed for easier imple
 
 1. Clone this repository.
 2. Install streamlit: `pip install streamlit install pip-run --user`, and openai: `pip install openai`, and redlines `pip install redlines`
-3. Create an OpenAI account to get a API key (see https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0). Save the API key in line 5 of `achademio.py` or in a separate file, named `API_key` (make sure that you do not share it with anyone).
-4. Run the streamlit python script in the command line with the following command: `python -m streamlit run achademio.py`
-5. A website will open in your browser where you can use the Achademio bot to improve your academic texts.
+3. Create an OpenAI account to get a API key (see https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0). Save the API key in line 5 of `achademio.py` or in a separate file *secrets.toml* in a *.streamlit* folder (path: \.streamlit\secrets.toml): `API_KEY = "[your-key]"` (make sure that you do not share it with anyone).
+4. Run the streamlit python script in the command line with the following command: `python -m streamlit run achademio.py`. A website will open in your browser where you can use the Achademio bot to improve your academic texts.
+5. Or deploy the streamlit app to Streamlit Cloud Community: follow the [instructions here](https://blog.streamlit.io/host-your-streamlit-app-for-free/#:~:text=Connect%20your%20account%20to%20GitHub,-There%20are%20two&text=On%20the%20authorization%20page%2C%20click%20on%20%E2%80%9CAuthorize%20streamlit.%22&text=This%20will%20let%20Community%20Cloud,%2C%20click%20%E2%80%9CAuthorize%20streamlit.%22&text=Now%20you're%20ready%20to%20deploy%20Streamlit%20apps!).
 
 ## Costs
 
