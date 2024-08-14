@@ -16,7 +16,7 @@ def send_click():
         # Define the ChatGPT model
         output = openai.ChatCompletion.create(
             # Define the model
-            model="gpt-3.5-turbo",
+            model="gpt-4o-2024-08-06",
             # Define the prompt - add the context
             messages = [
                 {'role':'system', 'content':"{}".format(bot_role)},
