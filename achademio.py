@@ -175,8 +175,9 @@ elif 'Summarize text in bullet points for slides' in option:
 elif 'Proofread my text and output errors' in option:
     proofreading()
 elif 'Define your own prompt' in option:
-    if st.session_state.user_prompt != " ":
+    if st.session_state.get("user_prompt", None) != None:
         user_defined_prompt = st.session_state.user_prompt
         st.write(f"Previous prompt: {user_defined_prompt}")
+
     st.text_area("Provide your prompt:", key="user_prompt")
     own_prompt()
