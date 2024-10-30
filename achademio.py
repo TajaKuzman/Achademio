@@ -41,7 +41,7 @@ def academic():
         # Define the ChatGPT model
         output = openai.ChatCompletion.create(
             # Define the model
-            model="gpt-3.5-turbo",
+            model="gpt-4o-2024-08-06",
             # Define the prompt - add the context
             messages = [
                 {'role':'system', 'content':"{}".format(bot_role)},
@@ -70,7 +70,7 @@ def bullet():
         # Define the ChatGPT model
         output = openai.ChatCompletion.create(
             # Define the model
-            model="gpt-3.5-turbo",
+            model="gpt-4o-2024-08-06",
             # Define the prompt - add the context
             messages = [
                 {'role':'system', 'content':"{}".format(bot_role)},
@@ -94,7 +94,7 @@ def slides():
         # Define the ChatGPT model
         output = openai.ChatCompletion.create(
             # Define the model
-            model="gpt-3.5-turbo",
+            model="gpt-4o-2024-08-06",
             # Define the prompt - add the context
             messages = [
                 {'role':'system', 'content':"{}".format(bot_role)},
@@ -119,11 +119,36 @@ def proofreading():
         # Define the ChatGPT model
         output = openai.ChatCompletion.create(
             # Define the model
-            model="gpt-3.5-turbo",
+            model="gpt-4o-2024-08-06",
             # Define the prompt - add the context
             messages = [
                 {'role':'system', 'content':"{}".format(bot_role)},
                 {'role':'user', 'content':"Find errors in the following text, delimited by triple backticks: ```{}```. Only ouput the errors and suggest how they should be corrected.".format(prompt)}
+            ],
+            # Set the temperature to 0 to get the most stable results
+            temperature = 0,
+        )
+
+        response = output['choices'][0].message.content
+
+        st.write(response)
+
+def own_prompt():
+    if st.session_state.user != '':
+        prompt = st.session_state.user
+        user_defined_prompt = st.session_state.user_prompt
+
+        # Define the bot role:
+        bot_role = "You are AChatdemio, a bot that helps young researchers to write better research papers."
+
+        # Define the ChatGPT model
+        output = openai.ChatCompletion.create(
+            # Define the model
+            model="gpt-4o-2024-08-06",
+            # Define the prompt - add the context
+            messages = [
+                {'role':'system', 'content':"{}".format(bot_role)},
+                {'role':'user', 'content':"{}: ```{}```".format(user_defined_prompt,prompt)}
             ],
             # Set the temperature to 0 to get the most stable results
             temperature = 0,
@@ -139,7 +164,7 @@ st.write("# Improve the style of your research papers with AI")
 
 # Create another two Streamlit widgets st.text_input() and st.button() to facilitate the query interface to users. 
 st.text_area("Provide your text:", key="user")
-option = st.selectbox("Select what would you like the Achademio bot to do:", ('Rewrite in academic style', 'Write a paragraph from my bullet point list', 'Summarize text in bullet points for slides', 'Proofread my text and output errors'))
+option = st.selectbox("Select what would you like the Achademio bot to do:", ('Rewrite in academic style', 'Write a paragraph from my bullet point list', 'Summarize text in bullet points for slides', 'Proofread my text and output errors', 'Define your own prompt'))
 
 if 'Rewrite in academic style' in option:
     academic()
@@ -147,5 +172,8 @@ elif 'Write a paragraph from my bullet point list' in option:
     bullet()
 elif 'Summarize text in bullet points for slides' in option:
     slides()
-else:
+elif 'Proofread my text and output errors' in option:
     proofreading()
+elif 'Define your own prompt' in option:
+    st.text_area("Provide your prompt:", key="user_prompt")
+    own_prompt()
