@@ -136,7 +136,10 @@ def proofreading():
 def own_prompt():
     if st.session_state.user != '':
         prompt = st.session_state.user
-        user_defined_prompt = st.session_state.user_prompt
+        if st.session_state.user_prompt != " ":
+            user_defined_prompt = st.session_state.user_prompt
+            st.write(f"Previous prompt: {user_defined_prompt}")
+            #user_defined_prompt = st.session_state.user_prompt
 
         # Define the bot role:
         bot_role = "You are AChatdemio, a bot that helps young researchers to write better research papers."
